@@ -39,12 +39,7 @@ app.post("/artist", (req, res) => {
 
 app.put("/artist/:id", (req, res) => {
   db.artist
-    .update(
-      {
-        artist_name: req.body.name,
-      },
-      { where: { id: req.params.id } }
-    )
+    .update({ artist_name: req.body.name }, { where: { id: req.params.id } })
     .then(() => {
       db.artist.findByPk(req.params.id).then((result) => {
         res.json(result);
