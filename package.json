@@ -1,19 +1,23 @@
 {
-  "name": "sequelize-101",
+  "name": "sequelize-music-app",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Logan Blackstad",
+  "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
     "express": "^4.17.1",
     "pg": "^8.2.1",
-    "pgtools": "^0.3.0",
-    "sequelize": "^5.21.11",
-    "sequelize-cli": "^5.5.1"
+    "pg-hstore": "^2.3.3",
+    "readline": "^1.3.0",
+    "readline-sync": "^1.4.10",
+    "sequelize": "^5.21.11"
   }
 }
