@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 const db = require("./models");
 
 app.use("/", indexRouter);
-app.use("/users", userRouter);
+app.use("/users", usersRouter);
 
 // routes
 // Home page

@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.changeColumn("Albums", "album_id", {
+    return queryInterface.changeColumn("Tracks", "Album_ID", {
       type: Sequelize.DataTypes.INTEGER,
       references: {
         model: "Albums",
@@ -14,6 +14,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.removeColumn("Albums", "album_id");
+    return queryInterface.removeColumn("Tracks", "Album_ID");
   },
 };

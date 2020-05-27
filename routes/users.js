@@ -9,7 +9,7 @@ router.get("/", function (req, res, next) {
   res.render("users.ejs");
 });
 
-router.post("/", (req, res) => {
+router.post("/register", (req, res) => {
   const { username, email, password } = req.body;
 
   bcrypt.hash(password, 10, (err, hash) => {
@@ -17,6 +17,24 @@ router.post("/", (req, res) => {
       res.redirect("/users");
     });
   });
+});
+
+router.post("/login", (req, res) => {
+  const { username, password } = req.body;
+
+  db.User.findOne({ where: { username } })
+    .then((Users) => {
+      bcrypt.compare(password, Users.password, (err, match) => {
+        if (match) {
+          res.send("Logged In!");
+        } else {
+          res.send("Incorrect Login Information");
+        }
+      });
+    })
+    .catch(() => {
+      res.send("username not found");
+    });
 });
 
 module.exports = router;
